@@ -21,7 +21,7 @@ public class HtmlConv {
 
         ArrayList<String> dateiInListe = new ArrayList<>();
         String zeile;
-        while ((zeile = br.readLine()) != null) dateiInListe.add(zeile);
+        while ((zeile = br.readLine()) != null) dateiInListe.add(zeile + "\n");
 
         // Eingabestrom schliessen
         br.close();
@@ -29,43 +29,39 @@ public class HtmlConv {
         //Arry-List für den geänderten Inhalt
         ArrayList<String> neueListe = new ArrayList<>();
 
-        //String zum zwischenspeichern der geänderten Zeile
-        String temp;
-
         //Zeilenweise...
         for (String zeileInListe :  dateiInListe) {
-            temp = zeileInListe + "\n"; //...den Inhalt in die temp-Variable speichern...
 
-            if (temp.contains("ü")) {                                   //auf ü prüfen...
-                temp =temp.replace("ü", "&uuml");     //und ggf. ersetzen.
+            if (zeileInListe.contains("ü")) {                                   //auf ü prüfen...
+                zeileInListe =zeileInListe.replace("ü", "&uuml");     //und ggf. ersetzen.
             }
-            if (temp.contains("Ü")) {                                    //auf Ü prüfen...
-                temp = temp.replace("Ü", "&Uuml");     //und ggf. ersetzen.
-
-            }
-            if (temp.contains("ö")) {                                    //auf ö prüfen...
-                temp = temp.replace("ö", "&ouml");     //und ggf. ersetzen.
+            if (zeileInListe.contains("Ü")) {                                    //auf Ü prüfen...
+                zeileInListe = zeileInListe.replace("Ü", "&Uuml");     //und ggf. ersetzen.
 
             }
-            if (temp.contains("Ö")) {                                    //auf Ö prüfen...
-                temp = temp.replace("Ö", "&Ouml");     //und ggf. ersetzen.
+            if (zeileInListe.contains("ö")) {                                    //auf ö prüfen...
+                zeileInListe = zeileInListe.replace("ö", "&ouml");     //und ggf. ersetzen.
 
             }
-            if (temp.contains("ä")) {                                    //auf ä prüfen...
-                temp = temp.replace("ä", "&auml");     //und ggf. ersetzen.
+            if (zeileInListe.contains("Ö")) {                                    //auf Ö prüfen...
+                zeileInListe = zeileInListe.replace("Ö", "&Ouml");     //und ggf. ersetzen.
 
             }
-            if (temp.contains("Ä")) {                                    //auf Ä prüfen...
-                temp = temp.replace("Ä", "&Auml");     //und ggf. ersetzen.
+            if (zeileInListe.contains("ä")) {                                    //auf ä prüfen...
+                zeileInListe = zeileInListe.replace("ä", "&auml");     //und ggf. ersetzen.
 
             }
-            if (temp.contains("ß")) {                                    //auf ß prüfen...
-                temp = temp.replace("ß", "&szlig");    //und ggf. ersetzen.
+            if (zeileInListe.contains("Ä")) {                                    //auf Ä prüfen...
+                zeileInListe = zeileInListe.replace("Ä", "&Auml");     //und ggf. ersetzen.
+
             }
-            neueListe.add(temp);
+            if (zeileInListe.contains("ß")) {                                    //auf ß prüfen...
+                zeileInListe = zeileInListe.replace("ß", "&szlig");    //und ggf. ersetzen.
+            }
+            neueListe.add(zeileInListe);
         }
 
-        // neue Datei erzeugen - Ausgabestroeme oeffnen
+        // neue Datei erzeugen - Ausgabestroeme öffnen
         FileOutputStream foStream = new FileOutputStream(htmlGeand);
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(foStream, "ISO8859_1"));
 
