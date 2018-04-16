@@ -1,4 +1,4 @@
-package ESA_DUD;
+package Übungen.DUD;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
