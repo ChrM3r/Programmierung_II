@@ -2,7 +2,11 @@ package ESA_DUD;
 
 import java.io.*;
 import java.util.ArrayList;
-
+/**
+ *
+ * @author Chris Merscher
+ * @version 1.0, 16.04.2018
+ */
 
 public class HtmlConv {
 

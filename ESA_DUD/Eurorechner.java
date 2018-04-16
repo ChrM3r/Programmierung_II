@@ -3,6 +3,11 @@ package ESA_DUD;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+/**
+ *
+ * @author Chris Merscher
+ * @version 1.0, 16.04.2018
+ */
 
 public class Eurorechner {
 
