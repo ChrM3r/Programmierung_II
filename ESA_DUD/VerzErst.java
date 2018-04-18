@@ -12,7 +12,7 @@ import java.io.File;
 public class VerzErst {
 
     //Fordert zur Eingabe eines Strings (hier: Pfad) auf und liefert diesen zurück
-    private static String eingeben(String text) throws IOException {
+    protected  static String eingeben(String text) throws IOException {
 
         // Eingabestroeme erzeugen und miteinander verbinden
         BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
@@ -30,7 +30,7 @@ public class VerzErst {
         return pfadAlsString;
     }
 
-    private static void erstellen(String verz) {
+    protected static void erstellen(String verz) {
 
         // Dateiobjekt mit entsprechendem Namen erzeugen
         File ordner = new File(verz);
