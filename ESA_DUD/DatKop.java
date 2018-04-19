@@ -5,6 +5,13 @@ import java.io.FileOutputStream;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ *
+ * @author Chris Merscher
+ * @version 1.0, 18.04.2018
+ */
+
+
 public class DatKop {
 
 
@@ -13,20 +20,23 @@ public class DatKop {
         kopieren("/Users/Chris/test/test.txt","/Users/Chris/hallo/test.txt");
     }
 
-    private static void kopieren(String quelle, String ziel) throws IOException{
+    protected static void kopieren(String quelle, String ziel) throws IOException{
 
         // Ein- und Ausgabeströme öffnen
         FileInputStream fi = new FileInputStream(quelle);
         FileOutputStream fo = new FileOutputStream(ziel);
 
         long dateiLaenge = (new File(quelle)).length();
+
         // Byte-Array, in das Daten eingelesen werden sollen, erzeugen
         byte[] zielArray = new byte[(int) dateiLaenge];
         int len;
+
         // Daten aus Quelldatei einlesen und in Zieldatei schreiben
         while ((len = fi.read(zielArray)) > 0) {
             fo.write(zielArray, 0, len);
         }
+
         //Ein- und Ausgabeströme schliessen
         fo.close();
         fi.close();

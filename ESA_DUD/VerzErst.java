@@ -1,33 +1,34 @@
 package ESA_DUD;
 
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.io.File;
+import java.util.Scanner;
 
+/**
+ * @author Chris Merscher
+ * @version 1.0, 19.04.2018
+ */
 
 public class VerzErst {
 
     //Fordert zur Eingabe eines Strings (hier: Pfad) auf und liefert diesen zurück
-    protected  static String eingeben(String text) throws IOException {
+    protected static String eingeben(String text) throws IOException {
 
-        // Eingabestroeme erzeugen und miteinander verbinden
-        BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
+        //Scanner zum Einlesen von Daten über die Konsole
+        Scanner scanner = new Scanner(System.in);
 
         //eingelesener String
         String pfadAlsString;
 
         //Pfad einlesen
-        System.out.print(text);
-        pfadAlsString = bReader.readLine();
+        System.out.println(text);
+        pfadAlsString = scanner.next();
 
         //Eingabestrom schließen
-        bReader.close();
+        scanner.close();
 
         return pfadAlsString;
+
     }
 
     protected static void erstellen(String verz) {
@@ -47,6 +48,7 @@ public class VerzErst {
 
 
     }
+
     //Test-Mainfunktion, um die Klasse als Stand-Alone-Applikation zu testen
     public static void main(String[] args) throws IOException {
 

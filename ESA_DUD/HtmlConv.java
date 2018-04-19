@@ -19,7 +19,7 @@ public class HtmlConv {
     private static void umlauteFiltern(String htmlOriginal, String htmlGeand) throws IOException {
         // Datei einlesen - Eingabestroeme oeffnen
         FileInputStream fiStream = new FileInputStream(htmlOriginal);
-        BufferedReader br = new BufferedReader(new InputStreamReader(fiStream, "ISO8859_1"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(fiStream, "ISO8859_1")); //Zeichencodierung, damit die Umlaute vernünftig eingelesen werden
 
         // Array-List bis zum Dokumentende zeilenweise befüllen
 
@@ -39,6 +39,7 @@ public class HtmlConv {
             if (zeileInListe.contains("ü")) {                                   //auf ü prüfen...
                 zeileInListe =zeileInListe.replace("ü", "&uuml");     //und ggf. ersetzen.
             }
+
             if (zeileInListe.contains("Ü")) {                                    //auf Ü prüfen...
                 zeileInListe = zeileInListe.replace("Ü", "&Uuml");     //und ggf. ersetzen.
 

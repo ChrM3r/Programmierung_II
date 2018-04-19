@@ -17,13 +17,7 @@ public class Eurorechner {
     umrechnen();
     }
 
-    /**
-     * Text von der Konsole einlesen und zurueckgeben.
-     *
-     *            Bezeichnung welcher Wert eingegeben werden soll
-     * @return von Konsole eingelesener Wert
-     * @throws IOException
-     */
+
     public static void umrechnen() throws IOException {
 
         // Eingabestroeme erzeugen und miteinander verbinden
