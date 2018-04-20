@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * @author Chris Merscher
- * @version 1.0, 18.04.2018
+ * @version 1.0, 19.04.2018
  */
 
 public class TestKlasse {
@@ -20,6 +20,7 @@ public class TestKlasse {
         String os;
         String benutzer;
         boolean pruefer = false;
+
 
 
         //Neues Scanner-Objekt für sämtliche Abfragen im Verlauf des Programms
