@@ -22,7 +22,6 @@ public class TestKlasse {
         boolean pruefer = false;
 
 
-
         //Neues Scanner-Objekt für sämtliche Abfragen im Verlauf des Programms
 
         Scanner scanner = new Scanner(System.in);
@@ -141,12 +140,13 @@ public class TestKlasse {
             System.out.println("Wählen Sie, welche Information für die Dateien angezeigt werden soll:");
 
             System.out.println("Dateigröße 1");
-            System.out.println ("Verzeichnis oder Datei 2");
-            System.out.println ("Letzter Tag der Änderung 3;");
+            System.out.println("Verzeichnis oder Datei 2");
+            System.out.println("Letzter Tag der Änderung 3;");
             System.out.print("Schreib- und Lesezugriff erlaubt ja/nein 4 ");
             entscheidung = scanner.next();
 
-            switch1: switch (entscheidung) {
+            switch1:
+            switch (entscheidung) {
                 case "1": {
                     DatInfo.groesseAusgeben(htmlFile);
                     DatInfo.groesseAusgeben(graphikFile);
@@ -160,7 +160,7 @@ public class TestKlasse {
 
                             break switch1;
 
-                        } else if (janein.equals("nein")){
+                        } else if (janein.equals("nein")) {
                             pruefer = true;
                             break switch1;
 
@@ -182,7 +182,7 @@ public class TestKlasse {
 
                             break switch1;
 
-                        } else if (janein.equals("nein")){
+                        } else if (janein.equals("nein")) {
                             pruefer = true;
                             break switch1;
 
@@ -204,7 +204,7 @@ public class TestKlasse {
 
                             break switch1;
 
-                        } else if (janein.equals("nein")){
+                        } else if (janein.equals("nein")) {
                             pruefer = true;
                             break switch1;
 
@@ -226,7 +226,7 @@ public class TestKlasse {
 
                             break switch1;
 
-                        } else if (janein.equals("nein")){
+                        } else if (janein.equals("nein")) {
                             pruefer = true;
                             break switch1;
 
@@ -234,7 +234,6 @@ public class TestKlasse {
 
                     } while (!(janein.equals("ja") || janein.equals("nein")));
                 }
-
             }
         } while (!pruefer);
 

@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- *
  * @author Chris Merscher
  * @version 1.0, 18.04.2018
  */
@@ -16,11 +15,11 @@ public class DatKop {
 
 
     //Kopiert eine Datei von quelle nach ziel und gibt eine Statusmeldung auf der Standardausgabe über den Erfolg aus.
-    public static void main (String args[]) throws IOException{
-        kopieren("/Users/Chris/test/test.txt","/Users/Chris/hallo/test.txt");
+    public static void main(String args[]) throws IOException {
+        kopieren("/Users/Chris/test/test.txt", "/Users/Chris/hallo/test.txt");
     }
 
-    protected static void kopieren(String quelle, String ziel) throws IOException{
+    protected static void kopieren(String quelle, String ziel) throws IOException {
 
         // Ein- und Ausgabeströme öffnen
         FileInputStream fi = new FileInputStream(quelle);

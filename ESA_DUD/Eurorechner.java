@@ -3,8 +3,8 @@ package ESA_DUD;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 /**
- *
  * @author Chris Merscher
  * @version 1.0, 16.04.2018
  */
@@ -14,7 +14,7 @@ public class Eurorechner {
     private static final double KURS = 1.29535;
 
     public static void main(String[] args) throws IOException {
-    umrechnen();
+        umrechnen();
     }
 
 
@@ -53,12 +53,10 @@ public class Eurorechner {
                 else if (richtung.equals("U") || richtung.equals("u")) {
                     betragum = UsdZuEur(betragAlsDouble);                                    //Funktion ausführen...
                     System.out.printf("%.2f USD sind %.2f EUR! \n", betragAlsDouble, betragum);   //...und ausgeben!
-                }
-                else System.out.println("Falsche Eingabe! Bitte nochmal!");
+                } else System.out.println("Falsche Eingabe! Bitte nochmal!");
             }
             //Falls eingegebener Betrag keine Zahl...
-            catch (NumberFormatException e)
-            {
+            catch (NumberFormatException e) {
                 System.out.println("Falsche Eingabe! Bitte nochmal!");
             }
 
@@ -70,11 +68,12 @@ public class Eurorechner {
     }
 
     //Methode zur Umrechnung EUR zu USD
-    private static double EurZuUsd (double betrag){
+    private static double EurZuUsd(double betrag) {
         return betrag * KURS;
     }
+
     //Methode zur Umrechnung USD zu EUR
-    private static double UsdZuEur (double betrag){
+    private static double UsdZuEur(double betrag) {
         return betrag / KURS;
     }
 }

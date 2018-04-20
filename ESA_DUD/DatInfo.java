@@ -5,7 +5,6 @@ import java.io.File;
 import java.util.Date;
 
 /**
- *
  * @author Chris Merscher
  * @version 1.0, 18.04.2018
  */
@@ -67,7 +66,7 @@ public class DatInfo {
         System.out.println("Zugriffsrechte für aktuellen Benutzer von " + eingabe.getName() + ":\n" +
                 "Ausführbar: " + eingabe.canExecute() + "\n" +
                 "Lesbar: " + eingabe.canRead() + "\n" +
-                "Änderbar: " + eingabe.canWrite()+ "\n");
+                "Änderbar: " + eingabe.canWrite() + "\n");
     }
 
 

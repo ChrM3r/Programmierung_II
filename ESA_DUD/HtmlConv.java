@@ -2,8 +2,8 @@ package ESA_DUD;
 
 import java.io.*;
 import java.util.ArrayList;
+
 /**
- *
  * @author Chris Merscher
  * @version 1.0, 16.04.2018
  */
@@ -34,10 +34,10 @@ public class HtmlConv {
         ArrayList<String> neueListe = new ArrayList<>();
 
         //Zeilenweise...
-        for (String zeileInListe :  dateiInListe) {
+        for (String zeileInListe : dateiInListe) {
 
             if (zeileInListe.contains("ü")) {                                   //auf ü prüfen...
-                zeileInListe =zeileInListe.replace("ü", "&uuml");     //und ggf. ersetzen.
+                zeileInListe = zeileInListe.replace("ü", "&uuml");     //und ggf. ersetzen.
             }
 
             if (zeileInListe.contains("Ü")) {                                    //auf Ü prüfen...
