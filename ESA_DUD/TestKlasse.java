@@ -138,28 +138,35 @@ public class TestKlasse {
 
         do {
 
-            System.out.println(" Wählen Sie, welche Information für die Dateien angezeigt werden soll:\n " +
-                    "Dateigröße 1;\n" +
-                    " Verzeichnis oder Datei 2;\n" +
-                    " Letzter Tag der Änderung 3;\n" +
-                    " Schreib- und Lesezugriff erlaubt ja/nein 4 ");
+            System.out.println("Wählen Sie, welche Information für die Dateien angezeigt werden soll:");
+
+            System.out.println("Dateigröße 1");
+            System.out.println ("Verzeichnis oder Datei 2");
+            System.out.println ("Letzter Tag der Änderung 3;");
+            System.out.print("Schreib- und Lesezugriff erlaubt ja/nein 4 ");
             entscheidung = scanner.next();
 
-            switch (entscheidung) {
+            switch1: switch (entscheidung) {
                 case "1": {
                     DatInfo.groesseAusgeben(htmlFile);
                     DatInfo.groesseAusgeben(graphikFile);
                     DatInfo.groesseAusgeben(javaFile);
 
-                    System.out.println("Weitere Infos? ja/nein: ");
-                    janein = scanner.next();
+                    do {
+                        System.out.println("Weitere Infos? ja/nein: ");
+                        janein = scanner.next();
 
-                    if (janein.equals("ja"))
-                        break;
-                    else {
-                        pruefer = true;
-                        break;
-                    }
+                        if (janein.equals("ja")) {
+
+                            break switch1;
+
+                        } else if (janein.equals("nein")){
+                            pruefer = true;
+                            break switch1;
+
+                        } else System.out.println("Falsche Eingabe");
+
+                    } while (!(janein.equals("ja") || janein.equals("nein")));
                 }
 
                 case "2": {
@@ -167,15 +174,21 @@ public class TestKlasse {
                     DatInfo.dateiOderVerzeichnis(graphikFile);
                     DatInfo.dateiOderVerzeichnis(javaFile);
 
-                    System.out.println("Weitere Infos? ja/nein: ");
-                    janein = scanner.next();
+                    do {
+                        System.out.println("Weitere Infos? ja/nein: ");
+                        janein = scanner.next();
 
-                    if (janein.equals("ja"))
-                        break;
-                    else {
-                        pruefer = true;
-                        break;
-                    }
+                        if (janein.equals("ja")) {
+
+                            break switch1;
+
+                        } else if (janein.equals("nein")){
+                            pruefer = true;
+                            break switch1;
+
+                        } else System.out.println("Falsche Eingabe");
+
+                    } while (!(janein.equals("ja") || janein.equals("nein")));
                 }
 
                 case "3": {
@@ -183,15 +196,21 @@ public class TestKlasse {
                     DatInfo.aenderungAusgeben(graphikFile);
                     DatInfo.aenderungAusgeben(javaFile);
 
-                    System.out.println("Weitere Infos? ja/nein: ");
-                    janein = scanner.next();
+                    do {
+                        System.out.println("Weitere Infos? ja/nein: ");
+                        janein = scanner.next();
 
-                    if (janein.equals("ja"))
-                        break;
-                    else {
-                        pruefer = true;
-                        break;
-                    }
+                        if (janein.equals("ja")) {
+
+                            break switch1;
+
+                        } else if (janein.equals("nein")){
+                            pruefer = true;
+                            break switch1;
+
+                        } else System.out.println("Falsche Eingabe");
+
+                    } while (!(janein.equals("ja") || janein.equals("nein")));
                 }
 
                 case "4": {
@@ -199,15 +218,21 @@ public class TestKlasse {
                     DatInfo.lesenSchreiben(graphikFile);
                     DatInfo.lesenSchreiben(javaFile);
 
-                    System.out.println("Weitere Infos? ja/nein: ");
-                    janein = scanner.next();
+                    do {
+                        System.out.println("Weitere Infos? ja/nein: ");
+                        janein = scanner.next();
 
-                    if (janein.equals("ja"))
-                        break;
-                    else {
-                        pruefer = true;
-                        break;
-                    }
+                        if (janein.equals("ja")) {
+
+                            break switch1;
+
+                        } else if (janein.equals("nein")){
+                            pruefer = true;
+                            break switch1;
+
+                        } else System.out.println("Falsche Eingabe");
+
+                    } while (!(janein.equals("ja") || janein.equals("nein")));
                 }
 
             }
@@ -215,5 +240,7 @@ public class TestKlasse {
 
         //Eingabestrom schließen
         scanner.close();
+
+        System.out.println("Ahoi!");
     }
 }
