@@ -100,21 +100,22 @@ public class TestKlasse {
 
         //Kopierteil...
 
+        System.out.println();
         System.out.println("Kommen wir nun zum Kopieren.");
 
         System.out.print("Bitte geben Sie den Pfad an, in dem die Graphik, das Java- und das HTML-Dokument aktuell gespeichert sind: ");
         String kopierPfad;
         kopierPfad = scanner.next();
 
-        System.out.print("Bitte den vollständigen Namen des HTML-Dokuments (inkl. Dateiendung) ein: ");
+        System.out.print("Bitte den vollständigen Namen des HTML-Dokuments (inkl. Dateiendung) eingeben: ");
         String html;
         html = scanner.next();
 
-        System.out.print("Bitte den vollständigen Namen der Graphik (inkl. Dateiendung) ein: ");
+        System.out.print("Bitte den vollständigen Namen der Graphik (inkl. Dateiendung) eingeben: ");
         String graphik;
         graphik = scanner.next();
 
-        System.out.print("Bitte den vollständigen Namen des Java-Dokuments (inkl. Dateiendung) ein: ");
+        System.out.print("Bitte den vollständigen Namen des Java-Dokuments (inkl. Dateiendung) eingeben: ");
         String java;
         java = scanner.next();
 
@@ -133,6 +134,7 @@ public class TestKlasse {
         File javaFile = new File(pfad + "/Java/" + java);
         String janein;
 
+        System.out.println();
         System.out.println("Nun sind wir bei den Dateiinfos angekommen");
 
         do {
@@ -141,8 +143,9 @@ public class TestKlasse {
 
             System.out.println("Dateigröße 1");
             System.out.println("Verzeichnis oder Datei 2");
-            System.out.println("Letzter Tag der Änderung 3;");
-            System.out.print("Schreib- und Lesezugriff erlaubt ja/nein 4 ");
+            System.out.println("Letzter Tag der Änderung 3");
+            System.out.println("Schreib- und Lesezugriff erlaubt ja/nein 4 ");
+            System.out.print("Eingabe: ");
             entscheidung = scanner.next();
 
             switch1:
@@ -234,12 +237,13 @@ public class TestKlasse {
 
                     } while (!(janein.equals("ja") || janein.equals("nein")));
                 }
+                default: System.out.println("Fehler! Falsche Eingabe?");
             }
         } while (!pruefer);
 
         //Eingabestrom schließen
         scanner.close();
 
-        System.out.println("Ahoi!");
+        System.out.println("Ahoi! (c) Chris Merscher");
     }
 }
