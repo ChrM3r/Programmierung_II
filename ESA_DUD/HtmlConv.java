@@ -10,9 +10,10 @@ import java.util.ArrayList;
 
 public class HtmlConv {
 
+
     public static void main(String[] args) throws IOException {
-        String htmlOriginal = "datei1702_vor.html";
-        String htmlGean = "datei1702_nach.html";
+        String htmlOriginal = "/Users/Chris/Downloads/test.html";
+        String htmlGean = "/Users/Chris/Downloads/datei1702_nach.html";
         umlauteFiltern(htmlOriginal, htmlGean);
     }
 
@@ -33,52 +34,30 @@ public class HtmlConv {
         //Arry-List für den geänderten Inhalt
         ArrayList<String> neueListe = new ArrayList<>();
 
-        //Zeilenweise...
-        for (String zeileInListe : dateiInListe) {
+        //Stream und Lambda zum ersetzen
+        dateiInListe
+                .forEach(s -> neueListe.add(s.replace("ü","&uuml")
+                .replace("Ü","&Uuml")
+                .replace("ö","&ouml")
+                .replace("Ö","&Ouml")
+                .replace("ä","&auml")
+                .replace("Ä","&Auml")
+                .replace("ß","&szlig")));
 
-            if (zeileInListe.contains("ü")) {                                   //auf ü prüfen...
-                zeileInListe = zeileInListe.replace("ü", "&uuml");     //und ggf. ersetzen.
-            }
-
-            if (zeileInListe.contains("Ü")) {                                    //auf Ü prüfen...
-                zeileInListe = zeileInListe.replace("Ü", "&Uuml");     //und ggf. ersetzen.
-
-            }
-            if (zeileInListe.contains("ö")) {                                    //auf ö prüfen...
-                zeileInListe = zeileInListe.replace("ö", "&ouml");     //und ggf. ersetzen.
-
-            }
-            if (zeileInListe.contains("Ö")) {                                    //auf Ö prüfen...
-                zeileInListe = zeileInListe.replace("Ö", "&Ouml");     //und ggf. ersetzen.
-
-            }
-            if (zeileInListe.contains("ä")) {                                    //auf ä prüfen...
-                zeileInListe = zeileInListe.replace("ä", "&auml");     //und ggf. ersetzen.
-
-            }
-            if (zeileInListe.contains("Ä")) {                                    //auf Ä prüfen...
-                zeileInListe = zeileInListe.replace("Ä", "&Auml");     //und ggf. ersetzen.
-
-            }
-            if (zeileInListe.contains("ß")) {                                    //auf ß prüfen...
-                zeileInListe = zeileInListe.replace("ß", "&szlig");    //und ggf. ersetzen.
-            }
-            neueListe.add(zeileInListe);
-        }
 
         // neue Datei erzeugen - Ausgabestroeme öffnen
         FileOutputStream foStream = new FileOutputStream(htmlGeand);
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(foStream, "ISO8859_1"));
+        OutputStreamWriter ow = new OutputStreamWriter(foStream, "ISO8859_1");
 
         // Zeilen in neue Datei speichern
         for (String zeileInListe : neueListe) {
-            bw.write(zeileInListe);
+            ow.write(zeileInListe);
         }
 
         // Inhalt aus internem Puffer in den FileOutputStream schreiben
-        bw.flush();
+        ow.flush();
         //Ausgabestrom schließen
-        bw.close();
+        ow.close();
 
         // Benutzerausgabe
         System.out.println("Geändertes HTML-Dokument wurde in die Datei '" + htmlGeand + "' gespeichert.");
