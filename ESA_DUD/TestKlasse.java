@@ -66,9 +66,10 @@ public class TestKlasse {
         pruefer = false; //pruefer für später wieder auf false setzten
 
 
-        File pfad = new File(parentPfad + "Dateimanagement//");
-
+        File rootpfad = new File(parentPfad + "Dateimanagement//");
+        File pfad = new File(rootpfad + "/HTML/");
         //Auufruf der Klasse VerzErst
+        VerzErst.erstellen(rootpfad.toString());
         VerzErst.erstellen(pfad.toString());
         VerzErst.erstellen(pfad + "/Dokumente/");
         VerzErst.erstellen(pfad + "/Graphik/");
@@ -120,18 +121,18 @@ public class TestKlasse {
         java = scanner.next();
 
         try {
-            DatKop.kopieren(kopierPfad + html, pfad + "/Dokumente/" + html);
-            DatKop.kopieren(kopierPfad + graphik, pfad + "/Graphik/" + graphik);
-            DatKop.kopieren(kopierPfad + html, pfad + "/Java/" + java);
+            DatKop.kopieren(kopierPfad + html, rootpfad + "/Dokumente/" + html);
+            DatKop.kopieren(kopierPfad + graphik, rootpfad + "/Graphik/" + graphik);
+            DatKop.kopieren(kopierPfad + html, rootpfad + "/Java/" + java);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
         //Datei-Info-Teil
 
-        File htmlFile = new File(pfad + "/Dokumente/" + html);
-        File graphikFile = new File(pfad + "/Graphik/" + graphik);
-        File javaFile = new File(pfad + "/Java/" + java);
+        File htmlFile = new File(rootpfad + "/Dokumente/" + html);
+        File graphikFile = new File(rootpfad + "/Graphik/" + graphik);
+        File javaFile = new File(rootpfad + "/Java/" + java);
         String janein;
 
         System.out.println();
