@@ -18,7 +18,7 @@ public class Eurorechner {
     }
 
 
-    public static void umrechnen() throws IOException {
+    private static void umrechnen() throws IOException {
 
         // Eingabestroeme erzeugen und miteinander verbinden
         BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));

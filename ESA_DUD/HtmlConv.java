@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * @author Chris Merscher
- * @version 1.0, 16.04.2018
+ * @version 1.1, 29.04.2018
  */
 
 public class HtmlConv {
@@ -36,13 +36,13 @@ public class HtmlConv {
 
         //Stream und Lambda zum ersetzen
         dateiInListe
-                .forEach(s -> neueListe.add(s.replace("ü","&uuml")
-                .replace("Ü","&Uuml")
-                .replace("ö","&ouml")
-                .replace("Ö","&Ouml")
-                .replace("ä","&auml")
-                .replace("Ä","&Auml")
-                .replace("ß","&szlig")));
+                .forEach(s -> neueListe.add(s.replace("ü","&uuml;")
+                .replace("Ü","&Uuml;")
+                .replace("ö","&ouml;")
+                .replace("Ö","&Ouml;")
+                .replace("ä","&auml;")
+                .replace("Ä","&Auml;")
+                .replace("ß","&szlig;")));
 
 
         // neue Datei erzeugen - Ausgabestroeme öffnen
