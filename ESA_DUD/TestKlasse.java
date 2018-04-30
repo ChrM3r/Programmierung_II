@@ -52,7 +52,7 @@ public class TestKlasse {
 
                 //WINDOWS...
             } else if (os.equals("W") || os.equals("w")) {
-                parentPfad = "C:/";
+                parentPfad = "/";
 
                 File temp = new File(parentPfad);
 
