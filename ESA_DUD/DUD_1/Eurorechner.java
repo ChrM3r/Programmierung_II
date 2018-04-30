@@ -1,4 +1,4 @@
-package ESA_DUD;
+package ESA_DUD.DUD_1;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package ESA_DUD;
+package ESA_DUD.DUD_2;
 
 import java.io.*;
 import java.util.ArrayList;

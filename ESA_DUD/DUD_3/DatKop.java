@@ -1,4 +1,4 @@
-package ESA_DUD;
+package ESA_DUD.DUD_3;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

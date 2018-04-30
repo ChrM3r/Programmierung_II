@@ -1,4 +1,4 @@
-package ESA_DUD;
+package ESA_DUD.DUD_3;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +37,7 @@ public class TestKlasse {
 
 
             //UNIX...
-            if (os.equals("U") || os.equals("u")) {
+            if (os.equalsIgnoreCase("U")) {
 
                 System.out.print("Bitte geben Sie den Benutzernamen des aktuellen Benutzers ein: ");
                 benutzer = scanner.next();
@@ -51,17 +51,14 @@ public class TestKlasse {
                 } else System.out.println("Fehler! Mglw. falscher Benutzername?"); //Prüfen, ob Benutzerordner existiert
 
                 //WINDOWS...
-            } else if (os.equals("W") || os.equals("w")) {
+            } else if (os.equalsIgnoreCase("W")){
+
                 parentPfad = "/";
-
-                File temp = new File(parentPfad);
-
-                if (temp.mkdir()) {
-                    System.out.println("Die Verzeichnisstruktur wird auf Ihrem Systemlaufwerk (i.d.R. 'C:' erstellt!");
-                    pruefer = true;
-                } else System.out.println("Fehler! Mglw. kein Windows-System?"); //Prüfen, ob C:/ existiert
+                System.out.println("Die Verzeichnisstruktur wird auf Ihrem Systemlaufwerk (i.d.R. 'C:' erstellt!");
+                pruefer = true;
+               }
             }
-        }
+
 
         pruefer = false; //pruefer für später wieder auf false setzten
 
@@ -121,18 +118,18 @@ public class TestKlasse {
         java = scanner.next();
 
         try {
-            DatKop.kopieren(kopierPfad + html, rootpfad + "/Dokumente/" + html);
-            DatKop.kopieren(kopierPfad + graphik, rootpfad + "/Graphik/" + graphik);
-            DatKop.kopieren(kopierPfad + html, rootpfad + "/Java/" + java);
+            DatKop.kopieren(kopierPfad + html, pfad + "/Dokumente/" + html);
+            DatKop.kopieren(kopierPfad + graphik, pfad + "/Graphik/" + graphik);
+            DatKop.kopieren(kopierPfad + html, pfad + "/Java/" + java);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
         //Datei-Info-Teil
 
-        File htmlFile = new File(rootpfad + "/Dokumente/" + html);
-        File graphikFile = new File(rootpfad + "/Graphik/" + graphik);
-        File javaFile = new File(rootpfad + "/Java/" + java);
+        File htmlFile = new File(pfad + "/Dokumente/" + html);
+        File graphikFile = new File(pfad + "/Graphik/" + graphik);
+        File javaFile = new File(pfad + "/Java/" + java);
         String janein;
 
         System.out.println();
