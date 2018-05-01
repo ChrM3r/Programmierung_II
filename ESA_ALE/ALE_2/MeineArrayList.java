@@ -3,6 +3,13 @@ package ESA_ALE.ALE_2;
 
 import java.util.Arrays;
 
+
+/**
+ * @author Chris Merscher
+ * @version 1.0, 01.05.2018
+ */
+
+
 public class MeineArrayList<E> {
     private E[] list;
     private int size;
@@ -17,36 +24,36 @@ public class MeineArrayList<E> {
      * @param inc the number of positions that will be added
      *            when the list is made bigger
      */
-    public MeineArrayList(int c, int inc) {
+    protected MeineArrayList(int c, int inc) {
         capacity = c;
         list = (E[]) new Object[c];
         size = 0;
         increment = inc;
 
     }
-    protected boolean add(E e){
+
+    protected boolean add(E e) {
 
         E[] tempArray = Arrays.copyOf(list, size + 1);
         tempArray[size] = e;
         list = Arrays.copyOf(tempArray, size + 1);
+        size++;
 
-        this.size++;
         if (capacity < size) capacity++;
 
         return true;
     }
 
-    protected boolean remove(int index){
+    protected boolean remove(int index) {
 
         boolean rue = false;
 
-        if (index < size  && index > -1 && size > 0) {
-
+        if (index < size && index > -1 && size > 0) {
             E[] tempArray = (E[]) new Object[size - 1];
-
             System.arraycopy(list, 0, tempArray, 0, index);
+
             if (!(index + 1 >= size))
-            System.arraycopy(list, index + 1, tempArray, index, tempArray.length - index);
+                System.arraycopy(list, index + 1, tempArray, index, tempArray.length - index);
 
             list = tempArray;
             rue = true;
@@ -56,23 +63,33 @@ public class MeineArrayList<E> {
 
         return rue;
     }
-    protected void clear(){
+
+    protected void clear() {
 
         E[] tempArray = (E[]) new Object[0];
         list = tempArray;
     }
-    protected int size(){
+
+    protected int size() {
 
         int zaehler = 0;
-        for (E e: list) zaehler++;
+
+        for (E e : list) zaehler++;
+
         return zaehler;
     }
 
-    public String toString(){
-        return Arrays.toString(list);
-    }
+    public String toString() {
 
-    public static void main(String args[]){
+        StringBuilder rue = new StringBuilder();
 
+        if (list.length > 1) {
+            Arrays.stream(list).forEach(e -> rue.append(e).append(", "));
+            rue.deleteCharAt(rue.lastIndexOf(","));
+            rue.deleteCharAt(rue.lastIndexOf(" "));
+        } else
+            Arrays.stream(list).forEach(rue::append);
+
+        return rue.toString();
     }
 }
