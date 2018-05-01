@@ -57,9 +57,8 @@ public class MeineArrayList<E> {
 
             list = tempArray;
             rue = true;
+            size--;
         }
-
-        size--;
 
         return rue;
     }
