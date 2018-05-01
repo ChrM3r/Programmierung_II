@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+/**
+ * @author Chris Merscher
+ * @version 1.0, 01.05.2018
+ */
+
 public class Telefonliste {
 
 
-    ArrayList<TelefonEintrag> telefonbuch = new ArrayList<>();
+    private ArrayList<TelefonEintrag> telefonbuch = new ArrayList<>();
 
 
     public static void main(String args[]){

@@ -19,7 +19,7 @@ class TelefonlisteTest {
     private Telefonliste telefonlist = new Telefonliste();
 
     @AfterEach
-    public void clearList() {
+    private void clearList() {
         telefonlist.clear();
     }
 
@@ -28,7 +28,7 @@ class TelefonlisteTest {
     class TelefonlisteTestEmptyList {
 
         @Test
-        public void testAddEntry() {
+        private void testAddEntry() {
             telefonlist.addEntry("Max", "987654321");
             //can be handy to check visually when the test fails
             System.out.println(telefonlist);
@@ -36,24 +36,24 @@ class TelefonlisteTest {
         }
 
         @Test
-        public void testModifyEntry() {
+        private void testModifyEntry() {
             assertFalse(telefonlist.modifyEntry("Frieda", "123456789", "Frieda Mustermann", "012345678"));
 
         }
 
         @Test
-        public void testRemoveEntry() {
+        private void testRemoveEntry() {
             telefonlist.removeEntry("Frieda", "123456789");
             assertEquals(0, telefonlist.size());
         }
 
         @Test
-        public void testSearchByName() {
+        private void testSearchByName() {
             assertNotEquals("Name: Frieda Nummer: 123456789", telefonlist.searchByName("Frieda"));
         }
 
         @Test
-        public void testSearchNameByNumber() {
+        private void testSearchNameByNumber() {
             assertNotEquals("Name: Frieda Nummer: 123456789", telefonlist.searchNameByNumber("123456789"));
         }
     }
@@ -63,12 +63,12 @@ class TelefonlisteTest {
     class TelefonlisteTestOneEntry {
 
         @BeforeEach
-        public void init() {
+        private void init() {
             telefonlist.addEntry("Frieda", "123456789");
         }
 
         @Test
-        public void testAddEntry() {
+        private void testAddEntry() {
             telefonlist.addEntry("Max", "987654321");
             //can be handy to check visually when the test fails
             System.out.println(telefonlist);
@@ -76,23 +76,23 @@ class TelefonlisteTest {
         }
 
         @Test
-        public void testModifyEntry() {
+        private void testModifyEntry() {
             assertTrue(telefonlist.modifyEntry("Frieda", "123456789", "Frieda Mustermann", "012345678"));
         }
 
         @Test
-        public void testRemoveEntry() {
+        private void testRemoveEntry() {
             telefonlist.removeEntry("Frieda", "123456789");
             assertEquals(0, telefonlist.size());
         }
 
         @Test
-        public void testSearchByName() {
+        private void testSearchByName() {
             assertEquals("Name: Frieda Nummer: 123456789", telefonlist.searchByName("Frieda"));
         }
 
         @Test
-        public void testSearchNameByNumber() {
+        private void testSearchNameByNumber() {
             assertEquals("Name: Frieda Nummer: 123456789", telefonlist.searchNameByNumber("123456789"));
         }
     }
@@ -102,36 +102,36 @@ class TelefonlisteTest {
     class TelefonlisteTestMultiEntries {
 
         @BeforeEach
-        public void init() {
+        private void init() {
             telefonlist.addEntry("Liza", "123014585");
             telefonlist.addEntry("Frieda", "123456789");
             telefonlist.addEntry("John", "987654321");
         }
 
         @Test
-        public void testAddEntry() {
+        private void testAddEntry() {
             telefonlist.addEntry("Max", "987654321");
             assertEquals(4, telefonlist.size());
         }
 
         @Test
-        public void testModifyEntry() {
+        private void testModifyEntry() {
             assertTrue(telefonlist.modifyEntry("Frieda", "123456789", "Frieda Mustermann", "012345678"));
         }
 
         @Test
-        public void testRemoveEntry() {
+        private void testRemoveEntry() {
             telefonlist.removeEntry("Frieda", "123456789");
             assertEquals(2, telefonlist.size());
         }
 
         @Test
-        public void testSearchByName() {
+        private void testSearchByName() {
             assertEquals("Name: Frieda Nummer: 123456789", telefonlist.searchByName("Frieda"));
         }
 
         @Test
-        public void testSearchNameByNumber() {
+        private void testSearchNameByNumber() {
             assertEquals("Name: Frieda Nummer: 123456789", telefonlist.searchNameByNumber("123456789"));
         }
     }
