@@ -34,15 +34,17 @@ class MeineArrayListTest {
             meineAL.add(1);
             meineAL.add(2);
             meineAL.add(3);
-            System.out.println(meineAL);
-
-
             assertEquals(3, meineAL.size());
         }
 
         @Test
         public void testRemove() {
+            meineAL.add(1);
+            meineAL.add(2);
+            meineAL.add(3);
+
             assertTrue(meineAL.remove(1));
+            assertEquals(2, meineAL.size());
 
         }
 

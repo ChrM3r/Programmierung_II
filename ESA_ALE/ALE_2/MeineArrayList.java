@@ -26,12 +26,12 @@ public class MeineArrayList<E> {
     }
     protected boolean add(E e){
 
-        E[] tempArray = Arrays.copyOf(this.list, this.size + 1);
+        E[] tempArray = Arrays.copyOf(list, size + 1);
         tempArray[size] = e;
-        this.list = Arrays.copyOf(tempArray, this.size + 1);
+        list = Arrays.copyOf(tempArray, size + 1);
 
         this.size++;
-        if (this.capacity < this.size) this.capacity++;
+        if (capacity < size) capacity++;
 
         return true;
     }
@@ -40,20 +40,20 @@ public class MeineArrayList<E> {
 
         boolean rue = false;
 
-        if (!(index > list.length - 1 && index < 0 ) && size > 0){
-            E[] tempArray = (E[]) new Object[size - 1];
-            System.arraycopy(list, index, tempArray,index - 1, capacity - 1);
-            for (int i = 0; i < index; i++) {
-                System.arraycopy(list, i, tempArray,i, size - 1);
-            }
+        if (index < size  && index > -1 && size > 0) {
 
-            for (int i = index + 1; i < tempArray.length; i++){
-                System.arraycopy(list, index + 1, tempArray, index, size - 1);
-            }
-            list = Arrays.copyOf(tempArray, size - 1);
-            size--;
+            E[] tempArray = (E[]) new Object[size - 1];
+
+            System.arraycopy(list, 0, tempArray, 0, index);
+            if (!(index + 1 >= size))
+            System.arraycopy(list, index + 1, tempArray, index, tempArray.length - index);
+
+            list = tempArray;
             rue = true;
         }
+
+        size--;
+
         return rue;
     }
     protected void clear(){
@@ -70,5 +70,9 @@ public class MeineArrayList<E> {
 
     public String toString(){
         return Arrays.toString(list);
+    }
+
+    public static void main(String args[]){
+
     }
 }
