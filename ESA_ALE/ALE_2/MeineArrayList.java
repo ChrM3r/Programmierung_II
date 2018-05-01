@@ -65,8 +65,9 @@ public class MeineArrayList<E> {
 
     protected void clear() {
 
-        E[] tempArray = (E[]) new Object[0];
-        list = tempArray;
+        list = (E[]) new Object[0];
+        size = 0;
+        capacity = 0;
     }
 
     protected int size() {

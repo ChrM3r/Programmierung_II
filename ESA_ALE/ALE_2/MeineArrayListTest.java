@@ -20,19 +20,19 @@ import org.junit.jupiter.api.Test;
 @DisplayName("MeineArrayListTest mit drei unterschiedlichen Testszenarieen")
 class MeineArrayListTest {
 
-    private MeineArrayList meineAL = new MeineArrayList(0, 0);
+    public MeineArrayList meineAL = new MeineArrayList(0, 0);
 
     @Nested
     @DisplayName("Leeres Array")
-    private class MeineArrayListTestLeeresArray {
+    public class MeineArrayListTestLeeresArray {
 
         @AfterEach
-        private void clearList() {
+        public void clearList() {
             meineAL.clear();
         }
 
         @Test
-        private void testAdd() {
+        public void testAdd() {
 
             meineAL.add(1);
             meineAL.add(2);
@@ -41,20 +41,20 @@ class MeineArrayListTest {
         }
 
         @Test
-        private void testRemove() {
+        public void testRemove() {
 
             assertFalse(meineAL.remove(1));
             assertEquals(0, meineAL.size());
         }
 
         @Test
-        private void testClear() {
+        public void testClear() {
             meineAL.clear();
             assertEquals(0, meineAL.size());
         }
 
         @Test
-        private void TestToString() {
+        public void TestToString() {
 
             assertEquals("", meineAL.toString());
         }
@@ -67,31 +67,31 @@ class MeineArrayListTest {
 
         @BeforeEach
 
-        private void listeFüllen() {
+        public void listeFüllen() {
             meineAL.add("Hallo");
         }
 
         @Test
-        private void testAdd() {
+        public void testAdd() {
             meineAL.add(1);
             assertEquals(2, meineAL.size());
         }
 
         @Test
-        private void testRemove() {
+        public void testRemove() {
 
             assertTrue(meineAL.remove(0));
             assertEquals(0, meineAL.size());
         }
 
         @Test
-        private void testClear() {
+        public void testClear() {
             meineAL.clear();
             assertEquals(0, meineAL.size());
         }
 
         @Test
-        private void TestToString() {
+        public void TestToString() {
 
             assertEquals("Hallo", meineAL.toString());
         }
@@ -103,7 +103,7 @@ class MeineArrayListTest {
     class MeineArrayListTestMehrereEintraege {
 
         @BeforeEach
-        private void listeFuellen() {
+        public void listeFuellen() {
             meineAL.add("Hallo");
             meineAL.add(2);
             meineAL.add('z');
@@ -111,26 +111,26 @@ class MeineArrayListTest {
         }
 
         @Test
-        private void testAdd() {
+        public void testAdd() {
             meineAL.add("fünfter Eintrag");
             assertEquals(5, meineAL.size());
         }
 
         @Test
-        private void testRemove() {
+        public void testRemove() {
 
             assertTrue(meineAL.remove(3));
             assertEquals(3, meineAL.size());
         }
 
         @Test
-        private void testClear() {
+        public void testClear() {
             meineAL.clear();
             assertEquals(0, meineAL.size());
         }
 
         @Test
-        private void TestToString() {
+        public void TestToString() {
 
             assertEquals("Hallo, 2, z, 1.90802", meineAL.toString());
         }
